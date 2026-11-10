@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090b" />
+  <title>OBZIDIAN — Diecast Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="store">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Obzidian home">
+      <span class="brand-mark">O</span><span>OBZIDIAN<span class="brand-sub">DIECAST COLLECTION</span></span>
+    </a>
+    <nav class="header-nav"><a class="active" href="#collection">Collection</a><a href="#about">About</a><a class="nav-ig" href="https://www.instagram.com/obzidian._renders/" target="_blank" rel="noopener">Instagram ↗</a></nav>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> CURATED DIECAST COLLECTION</p>
+        <h1>Small scale.<br><em>Big presence.</em></h1>
+        <p class="hero-description">Discover your next favourite miniature. Carefully selected diecast models, ready for your collection.</p>
+        <a class="primary-button" href="#collection">Explore collection <span>↘</span></a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-frame"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=85" alt="Sports car detail" /></div>
+        <div class="hero-stamp"><span>OBZIDIAN</span><strong>01</strong><small>COLLECTOR'S EDITION</small></div>
+        <div class="hero-caption">THE ART OF<br>THE AUTOMOBILE</div>
+      </div>
+      <div class="hero-bottom"><span>EST. 2026</span><span>KERALA, INDIA</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
+
+    <section class="collection-section" id="collection">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> THE COLLECTION</p><h2>Find your <em>machine.</em></h2></div>
+        <p class="section-note">A selection for collectors<br>and automobile enthusiasts.</p>
+      </div>
+      <div class="toolbar">
+        <div class="collection-count" id="collectionCount">0 MODELS</div>
+        <div class="toolbar-right">
+          <input id="searchInput" class="search-input" type="search" placeholder="Search models..." aria-label="Search products">
+          <select id="sortSelect" class="sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A–Z</option></select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <div class="empty-state"><span class="loader"></span><p>Loading collection...</p></div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-number">O / 01</div>
+      <div><p class="eyebrow"><span class="eyebrow-line"></span> ABOUT OBZIDIAN</p><h2>For the love<br>of <em>machines.</em></h2></div>
+      <p class="about-text">OBZIDIAN brings miniature automotive icons closer to collectors. Explore the collection, choose your model, and message us directly on Instagram to check availability and place your order.</p>
+      <a class="text-link" href="https://www.instagram.com/obzidian._renders/" target="_blank" rel="noopener">FOLLOW OUR JOURNEY ↗</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">O</span><span>OBZIDIAN<span class="brand-sub">DIECAST COLLECTION</span></span></a><span>© 2026 OBZIDIAN. ALL RIGHTS RESERVED.</span><a href="https://www.instagram.com/obzidian._renders/" target="_blank" rel="noopener">@OBZIDIAN._RENDERS ↗</a></footer>
+
+  <div class="modal-backdrop" id="productModal" aria-hidden="true">
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-info"><p class="eyebrow"><span class="eyebrow-line"></span> OBZIDIAN COLLECTION</p><h2 id="modalName"></h2><p class="modal-price" id="modalPrice"></p><p class="modal-description" id="modalDescription"></p><div class="spec-list" id="modalSpecs"></div><a class="primary-button modal-contact" id="modalContact" href="#" target="_blank" rel="noopener">Contact on Instagram <span>↗</span></a><p class="modal-footnote">Availability and delivery details will be confirmed in DM.</p></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090b" />
+  <title>OBZIDIAN Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="manager">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header manager-header">
+    <a class="brand" href="index.html"><span class="brand-mark">O</span><span>OBZIDIAN<span class="brand-sub">MANAGER CONSOLE</span></span></a>
+    <nav class="header-nav"><a href="index.html">View store ↗</a><span class="admin-indicator"><i></i> LOCAL ADMIN</span></nav>
+  </header>
+
+  <main class="manager-main">
+    <section class="manager-title"><div><p class="eyebrow"><span class="eyebrow-line"></span> CONTROL CENTRE</p><h1>Store <em>manager.</em></h1><p>Manage your products and keep your collection up to date.</p></div><a class="outline-button" href="index.html" target="_blank">Open live store ↗</a></section>
+
+    <section class="stats-grid">
+      <div class="stat-card"><span>TOTAL PRODUCTS</span><strong id="totalProducts">0</strong></div>
+      <div class="stat-card"><span>AVAILABLE</span><strong id="availableProducts">0</strong></div>
+      <div class="stat-card"><span>SOLD OUT</span><strong id="soldProducts">0</strong></div>
+    </section>
+
+    <div class="manager-layout">
+      <section class="manager-panel editor-panel">
+        <div class="panel-heading"><div><p class="eyebrow">PRODUCT EDITOR</p><h2 id="formHeading">Add a product</h2></div><span class="panel-index">01 / EDIT</span></div>
+        <form id="productForm">
+          <input type="hidden" id="productId">
+          <label>Product name <input id="productName" type="text" placeholder="e.g. Porsche 911 GT3 RS" required maxlength="90"></label>
+          <div class="form-row"><label>Selling price (₹) <input id="productPrice" type="number" min="0" step="1" placeholder="499" required></label><label>Scale <input id="productScale" type="text" placeholder="1:64"></label></div>
+          <label>Product image URL <input id="productImage" type="url" placeholder="https://... (direct image link)" required></label>
+          <div class="image-preview-wrap"><img id="imagePreview" alt="Product preview"><span id="previewPlaceholder">IMAGE PREVIEW</span></div>
+          <label>Description <textarea id="productDescription" rows="4" placeholder="Describe the model, condition, packaging, etc."></textarea></label>
+          <div class="form-row"><label>Material <input id="productMaterial" type="text" placeholder="Diecast metal"></label><label>Operation <input id="productOperation" type="text" placeholder="Manual / Push"></label></div>
+          <div class="form-row"><label>Brand / series <input id="productBrand" type="text" placeholder="Hot Wheels"></label><label>Stock status <select id="productStatus"><option value="available">Available</option><option value="sold">Sold out</option></select></label></div>
+          <div class="form-actions"><button class="primary-button" type="submit" id="saveButton">Add product <span>＋</span></button><button class="quiet-button hidden" type="button" id="cancelEdit">Cancel edit</button></div>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+
+      <section class="manager-panel inventory-panel">
+        <div class="panel-heading"><div><p class="eyebrow">YOUR CATALOGUE</p><h2>Products <span id="inventoryCount">(0)</span></h2></div><span class="panel-index">02 / STOCK</span></div>
+        <div class="inventory-tools"><input id="managerSearch" class="search-input" type="search" placeholder="Search products..."><button class="quiet-button" id="exportButton" type="button">Export backup ↓</button></div>
+        <div class="inventory-list" id="inventoryList"><div class="empty-inventory">No products yet. Add your first model using the form.</div></div>
+        <div class="import-row"><label class="quiet-button import-button">Import backup ↑<input id="importInput" type="file" accept="application/json"></label><span>JSON backup</span></div>
+      </section>
+    </div>
+    <div class="manager-warning"><strong>Storage note</strong><span>This version saves products in this browser's localStorage. The store and manager must use the same domain and browser to share the catalogue. Clearing browser data will erase it, so export backups regularly. This is not cloud sync or secure admin authentication.</span></div>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">O</span><span>OBZIDIAN<span class="brand-sub">MANAGER CONSOLE</span></span></a><span>PRIVATE STORE MANAGEMENT</span><a href="index.html">BACK TO STORE ↗</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
